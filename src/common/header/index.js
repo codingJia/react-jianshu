@@ -10,9 +10,34 @@ import {
   NavSearch,
   Addition,
   Button,
-  SearchWrapper
+  SearchWrapper,
+  SearchInfo,
+  SearchInfoTit,
+  SearchInfoSwitch,
+  SearchInfoItem
 } from './style'
-
+const getListArea = flag => {
+  if (flag) {
+    return (
+      <SearchInfo>
+        <SearchInfoTit>
+          热门搜索
+          <SearchInfoSwitch>换一批</SearchInfoSwitch>
+        </SearchInfoTit>
+        <div>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+        </div>
+      </SearchInfo>
+    )
+  } else {
+    return null
+  }
+}
 const Header = props => {
   return (
     <HeaderWrapper>
@@ -35,6 +60,7 @@ const Header = props => {
           <span className={props.focused ? 'focused iconfont' : 'iconfont'}>
             &#xe624;
           </span>
+          {getListArea(props.focused)}
         </SearchWrapper>
       </Nav>
       <Addition>
