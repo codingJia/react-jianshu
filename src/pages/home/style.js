@@ -16,7 +16,7 @@ export const HomeLeft = styled.div`
   }
 `
 export const HomeRight = styled.div`
-  width: 240px;
+  width: 280px;
   float: right;
 `
 export const TopicWrapper = styled.div`
@@ -69,5 +69,76 @@ export const ItemInfo = styled.div`
     line-height: 24px;
     font-size: 13px;
     color: #999;
+  }
+`
+export const RecommendWrapper = styled.div`
+  margin-top: -4px;
+  padding-bottom: 4px;
+  min-height: 228px;
+  padding-top: 30px;
+`
+export const RecommentItem = styled.div`
+  width: 280px;
+  background: url(${props => props.imgUrl});
+  background-size: contain;
+  min-height: 50px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+`
+export const WriterWrapper = styled.div`
+  margin-bottom: 20px;
+  padding-top: 0;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 30px;
+`
+export const TitleWrapper = styled.div`
+  text-align: left;
+`
+export const TitleLeft = styled.span`
+  font-size: 14px;
+  color: #969696;
+`
+export const TitleRight = styled.a`
+  float: right;
+  display: inline-block;
+  font-size: 14px;
+  color: #969696;
+`
+export const WriterItem = styled.div`
+  margin-top: 15px;
+  overflow: hidden;
+  img {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  .descWrapper {
+    text-align: left;
+    float: left;
+    height: 100%;
+    margin-top: 5px;
+    line-height: 1.5;
+    .title {
+      padding-top: 5px;
+      margin-right: 60px;
+      font-size: 14px;
+    }
+    .desc {
+      margin-top: 2px;
+      font-size: 12px;
+      color: #969696;
+    }
+  }
+  .attention {
+    float: right;
+    margin-top: 5px;
+    padding: 0;
+    font-size: 13px;
+    color: #42c02e;
+    cursor: pointer;
   }
 `
