@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Topic from './components/Topic'
 import List from './components/List'
 import Recommend from './components/Recommend'
 import Writer from './components/Writer'
 import { HomeWrapper, HomeLeft, HomeRight } from './style'
-import axios from 'axios'
+import { actionCreators } from './store'
 import { connect } from 'react-redux'
-class Home extends Component {
+class Home extends PureComponent {
   render() {
     return (
       <HomeWrapper>
@@ -27,29 +27,12 @@ class Home extends Component {
     )
   }
   componentDidMount() {
-    axios
-      .get('/api/home.json')
-      .then(res => {
-        if (res.status === 200) {
-          const result = res.data.data
-          const action = {
-            type: 'get_Home_Data',
-            topicList: result.topicList,
-            articleList: result.articleList,
-            recommendList: result.recommendList,
-            writerList: result.writerList
-          }
-          this.props.getHomeData(action)
-        }
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    this.props.getHomeData()
   }
 }
 const mapDispatch = dispatch => ({
-  getHomeData(action) {
-    dispatch(action)
+  getHomeData() {
+    dispatch(actionCreators.getHomeData())
   }
 })
 

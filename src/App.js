@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 import Header from './common/header'
 import Home from './pages/home'
 import Detail from './pages/detail'
@@ -14,9 +14,11 @@ class App extends Component {
         <GlobalStyle />
         <IconGlobalStyle />
         <Provider store={store}>
-          <Header />
           <BrowserRouter>
             <div>
+              <Link to="/">
+                <Header />
+              </Link>
               <Route exact path="/" component={Home} />
               <Route exact path="/detail" component={Detail} />
             </div>

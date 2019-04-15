@@ -142,3 +142,19 @@ export const WriterItem = styled.div`
     cursor: pointer;
   }
 `
+export const AddMore = styled.button`
+  outline: none;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #a5a5a5;
+  height: 40px;
+  margin: 30px auto 60px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #a5a5a5;
+`
