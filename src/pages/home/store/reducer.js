@@ -18,8 +18,6 @@ export default (state = defaultState, action) => {
         writerList: fromJS(action.writerList)
       })
     case actionTypes.GET_WRITER_LIST:
-      console.log(action.nextPage)
-
       return state.merge({
         articleList: state.get('articleList').concat(fromJS(action.list)),
         articlePage: action.nextPage
